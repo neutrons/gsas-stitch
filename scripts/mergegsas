@@ -48,6 +48,15 @@ class InputFile:
         else:
             return 1
 
+def mergegsas(filenames, output):
+    handles = [InputFile(filename) for filename in filenames]
+    handles.sort()
+
+    outfile = file(output, 'w')
+    for (i, item) in enumerate(handles):
+        item.renumber(i+1)
+        item.write(outfile, i==0)
+
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Program to merge gsas files")
     parser.add_argument("-o", "--output", nargs=1, default="merged.getn")
@@ -59,10 +68,4 @@ if __name__ == "__main__":
     if len(args.filenames) <= 1:
         parser.exit("Need to supply more than one file to merge")
 
-    handles = [InputFile(filename) for filename in args.filenames]
-    handles.sort()
-
-    outfile = file(args.output, 'w')
-    for (i, item) in enumerate(handles):
-        item.renumber(i+1)
-        item.write(outfile, i==0)
+    mergegsas(args.filenames, args.output)
