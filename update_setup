@@ -1,0 +1,11 @@
+#!/usr/bin/env python
+import setup
+
+data = """[bdist_rpm]
+packager = %s <%s>
+requires = python
+""" % (setup.author, setup.email)
+
+
+outfile = file("setup.cfg", 'w')
+outfile.write(data)

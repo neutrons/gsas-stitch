@@ -26,19 +26,19 @@ extensions_modules=[] # written in C
 requires=[]
 options={}
 
-setup(name=package_name,
-      version=version,
-      description=description,
-      author=author,
-      author_email=email,
-      url=url,
-      scripts=scripts,
-      py_modules=py_modules,
-      ext_modules=extensions_modules,
-      packages=packages,
-      package_dir=package_dir,
-      package_data=package_data,
-      data_files=data_files,
-      requires=requires, #does not do anything
-      **options
-     )
+if __name__ == "__main__":
+    setup(name=package_name,
+          version=version,
+          description=description,
+          author=author,
+          author_email=email,
+          url=url,
+          scripts=scripts,
+          py_modules=py_modules,
+          ext_modules=extensions_modules,
+          packages=packages,
+          package_dir=package_dir,
+          package_data=package_data,
+          data_files=data_files,
+          requires=requires,
+          **options)
