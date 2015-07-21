@@ -9,7 +9,7 @@ from distutils.core import setup
 
 
 package_name = "mergegsas"
-version      = "0.1.0" # TODO currently hand-synchronized
+version      = "0.1.1" # TODO currently hand-synchronized
 author       = "Peter F. Peterson"
 license      = "The MIT License"
 email        = "petersonpf@ornl.gov"
