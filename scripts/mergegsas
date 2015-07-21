@@ -52,6 +52,9 @@ def mergegsas(filenames, output):
     handles = [InputFile(filename) for filename in filenames]
     handles.sort()
 
+    if isinstance(output, list):
+        output=output[0]
+
     outfile = file(output, 'w')
     for (i, item) in enumerate(handles):
         item.renumber(i+1)
